@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  border: 2px solid white;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(24, 23, 23);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.to-do-container {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 100vh;
+  min-height: 100%;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+}
+.to-do-head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  margin-bottom: 25px;
+  border: 3px solid white;
+  border-radius: 16px;
+  width: 40%;
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: all 0.5s ease;
+}
+.title:hover {
+  background-color: white;
+  color: black;
+}
+.user-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+.user-inputs label {
+  display: flex;
+  gap: 10px;
+}
+.user-inputs input[type="text"] {
+  width: 60%;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+}
+.user-inputs input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.user-inputs button,
+.status-btn {
+  padding: 10px;
+  width: 90px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.user-inputs button:hover,
+.status-btn:hover {
+  background: white;
+  color: black;
+}
+.to-do-body {
+  height: 50vh;
+  margin-top: 30px;
+}
+.to-do-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.to-do-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(39, 39, 39);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+}
+.to-do-item:hover {
+  transform: scale(1.02);
+}
+.to-do-info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+.to-do-info {
+  text-wrap: wrap;
+}
+.to-do-info p {
+  font-size: 0.7rem;
+}
+.to-do-btns {
+  display: flex;
+  gap: 20px;
+}
+.status-btn {
+  width: 120px;
+}
+.delete-btn {
+  padding: 10px;
+  width: 80px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background-color: rgb(141, 0, 0);
+}

@@ -5,16 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 body {
   font-family: "Roboto", sans-serif;
   background-color: rgb(39, 37, 37);
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 100%;
 }
@@ -124,8 +119,10 @@ body {
   align-items: start;
   gap: 10px;
 }
-.to-do-info {
-  text-wrap: wrap;
+.to-do-info h3 {
+  width: 95%;
+  text-align: justify;
+  overflow-wrap: break-word;
 }
 .to-do-info p {
   font-size: 0.7rem;
@@ -173,4 +170,268 @@ body {
 .delete-btn:hover {
   background-color: rgb(141, 0, 0);
   transform: translateY(-5px);
+}
+
+@media (width<=480px) {
+  .to-do-container {
+    width: 40vh;
+    padding: 15px;
+    margin: 30px auto;
+  }
+  .title {
+    border: 2px solid white;
+    padding: 5px 7px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 50%;
+  }
+  .user-inputs {
+    gap: 15px;
+    flex-direction: column;
+  }
+  .user-inputs label {
+    gap: 8px;
+    font-size: 0.8rem;
+  }
+  .user-inputs input[type="text"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid white;
+    font-size: 0.7rem;
+  }
+  .user-inputs input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+  }
+  .user-inputs button {
+    padding: 6px;
+    width: 70px;
+    font-size: 0.85rem;
+  }
+  .user-inputs button:hover {
+    transform: scale(1.05);
+  }
+  .to-do-item {
+    padding: 8px;
+    overflow: hidden;
+  }
+  .to-do-item:hover {
+    transform: scale(1.02);
+  }
+  .to-do-info {
+    width: 70%;
+    gap: 10px;
+  }
+  .to-do-info h3 {
+    width: 95%;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: justify;
+    overflow-wrap: break-word;
+  }
+  .to-do-info p {
+    font-size: 0.6rem;
+    margin-top: 10px;
+  }
+  .to-do-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .status-btn {
+    width: 65px;
+    padding: 0px;
+    height: 33px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+  .status-btn:hover {
+    transform: translateY(0px);
+  }
+  .delete-btn {
+    width: 65px;
+    height: 33px;
+    font-size: 0.7rem;
+  }
+  .delete-btn:hover {
+    background-color: rgb(141, 0, 0);
+    transform: translateY(0px);
+  }
+}
+
+@media (width>480px) and (width<=780px) {
+  .to-do-container {
+    width: 70vh;
+    padding: 20px;
+    margin: 50px auto;
+  }
+  .title {
+    border: 2px solid white;
+    padding: 5px 7px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    width: 50%;
+  }
+  .user-inputs {
+    gap: 15px;
+  }
+  .user-inputs label {
+    gap: 5px;
+    font-size: 0.8rem;
+  }
+  .user-inputs input[type="text"] {
+    width: 100%;
+    padding: 9px;
+    border: 2px solid white;
+    font-size: 0.8rem;
+  }
+  .user-inputs input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+  }
+  .user-inputs button {
+    padding: 6px;
+    width: 90px;
+    font-size: 0.85rem;
+  }
+  .user-inputs button:hover {
+    transform: scale(1.05);
+  }
+  .to-do-item {
+    padding: 5px;
+    overflow: hidden;
+  }
+  .to-do-item:hover {
+    transform: scale(1.02);
+  }
+  .to-do-info {
+    width: 70%;
+    gap: 10px;
+  }
+  .to-do-info h3 {
+    width: 95%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: justify;
+    overflow-wrap: break-word;
+  }
+  .to-do-info p {
+    font-size: 0.6rem;
+  }
+  .to-do-btns {
+    gap: 10px;
+  }
+  .status-btn {
+    width: 75px;
+    padding: 0px;
+    height: 33px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .status-btn:hover {
+    transform: translateY(0px);
+  }
+  .delete-btn {
+    width: 75px;
+    height: 33px;
+    font-size: 0.8rem;
+  }
+  .delete-btn:hover {
+    background-color: rgb(141, 0, 0);
+    transform: translateY(0px);
+  }
+}
+
+@media (width>780px) and (width<=1024px) {
+  .to-do-container {
+    width: 75vh;
+    padding: 20px;
+    margin: 50px auto;
+  }
+  .title {
+    border: 2px solid white;
+    padding: 5px 7px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    width: 40%;
+  }
+  .user-inputs {
+    gap: 20px;
+  }
+  .user-inputs label {
+    gap: 5px;
+    font-size: 0.8rem;
+  }
+  .user-inputs input[type="text"] {
+    width: 100%;
+    padding: 9px;
+    border: 2px solid white;
+    font-size: 0.8rem;
+  }
+  .user-inputs input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+  }
+  .user-inputs button {
+    padding: 6px;
+    width: 90px;
+    font-size: 0.85rem;
+  }
+  .user-inputs button:hover {
+    transform: scale(1.05);
+  }
+  .to-do-item {
+    padding: 5px;
+    overflow: hidden;
+  }
+  .to-do-item:hover {
+    transform: scale(1.02);
+  }
+  .to-do-info {
+    width: 70%;
+    gap: 10px;
+  }
+  .to-do-info h3 {
+    width: 95%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: justify;
+    overflow-wrap: break-word;
+  }
+  .to-do-info p {
+    font-size: 0.6rem;
+  }
+  .to-do-btns {
+    gap: 10px;
+  }
+  .status-btn {
+    width: 75px;
+    padding: 0px;
+    height: 33px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .status-btn:hover {
+    transform: translateY(0px);
+  }
+  .delete-btn {
+    width: 75px;
+    height: 33px;
+    font-size: 0.8rem;
+  }
+  .delete-btn:hover {
+    background-color: rgb(141, 0, 0);
+    transform: translateY(0px);
+  }
+}
+
+@media (width>1024px) {
+  .title {
+    padding: 5px 7px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    width: 60%;
+  }
 }

@@ -4,13 +4,28 @@ import "./App.css";
 const App = () => {
   const [input, setInput] = useState("");
   const [check, setCheck] = useState(false);
-  const [time, setTime] = useState("");
+  const [todos, setTodos] = useState([]);
 
-  const addTask = (e) => {
-    e.preventDefault();
-    setInput(input);
-    setTime(new Date().toLocaleString());
+  const addTask = () => {
+    if (!input.trim()) return;
+    let newTask = {
+      text: input,
+      completed: check,
+      timeStamp: new Date().toLocaleString(),
+    };
+    setTodos([...todos, newTask]);
     setInput("");
+    setCheck(false);
+  };
+  const deleteTask = (index) => {
+    let todosCopy = [...todos];
+    todosCopy.splice(index, 1);
+    setTodos(todosCopy);
+  };
+  const handleToggle = (index) => {
+    let todosCopy = [...todos];
+    todosCopy[index].completed = !todosCopy[index].completed;
+    setTodos(todosCopy);
   };
   return (
     <div className="to-do-container">
@@ -26,8 +41,8 @@ const App = () => {
           <label>
             <input
               type="checkbox"
-              value={check}
-              onChange={() => setCheck(!check)}
+              checked={check}
+              onChange={(e) => setCheck(e.target.checked)}
             />
             COMPLETED?
           </label>
@@ -35,17 +50,32 @@ const App = () => {
         </div>
       </div>
       <div className="to-do-body">
-        <div className="to-do-list" id="to-do-list">
-          <div className="to-do-item">
-            <div className="to-do-info">
-              <h3>{input}</h3>
-              <p>{time}</p>
+        <div className="to-do-list">
+          {todos.map((todo, index) => (
+            <div
+              className={`to-do-item ${todo.completed ? "done" : "unDone"}`}
+              key={index}
+            >
+              <div className="to-do-info">
+                <h3>{todo.text}</h3>
+                <p>{todo.timeStamp}</p>
+              </div>
+              <div className="to-do-btns">
+                <button
+                  className={` status-btn ${todo.completed ? "completed" : "in-completed"}`}
+                  onClick={() => handleToggle(index)}
+                >
+                  {todo.completed ? "Done" : "UnDone"}
+                </button>
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteTask(index)}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
-            <div className="to-do-btns">
-              <button className="status-btn">UnDone</button>
-              <button className="delete-btn">Delete</button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

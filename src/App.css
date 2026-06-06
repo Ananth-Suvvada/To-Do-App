@@ -5,25 +5,28 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  border: 2px solid white;
+html {
   width: 100%;
-  min-height: 100vh;
-  font-family: "Roboto", sans-serif;
-  background-color: rgb(24, 23, 23);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(39, 37, 37);
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .to-do-container {
   background-color: black;
   color: white;
   text-align: center;
-  width: 100vh;
-  min-height: 100%;
+  width: 90vh;
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 20px;
+  margin: 50px auto;
 }
 .to-do-head {
   width: 100%;
@@ -69,8 +72,7 @@ body {
   width: 20px;
   cursor: pointer;
 }
-.user-inputs button,
-.status-btn {
+.user-inputs button {
   padding: 10px;
   width: 90px;
   border: 2px solid white;
@@ -79,16 +81,16 @@ body {
   color: white;
   font-size: 1rem;
   font-weight: 600;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
-.user-inputs button:hover,
-.status-btn:hover {
+.user-inputs button:hover {
   background: white;
   color: black;
+  transform: scale(1.1);
 }
+
 .to-do-body {
-  height: 50vh;
   margin-top: 30px;
 }
 .to-do-list {
@@ -100,14 +102,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgb(39, 39, 39);
+  background: rgb(26, 26, 26);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 15px;
   border-radius: 8px;
   transition: transform 0.5s ease;
 }
+.done {
+  border-left: 5px solid green;
+}
+.unDone {
+  border-left: 5px solid red;
+}
 .to-do-item:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 .to-do-info {
   width: 60%;
@@ -128,6 +136,27 @@ body {
 }
 .status-btn {
   width: 120px;
+  padding: 10px;
+  width: 90px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.status-btn:hover {
+  transform: translateY(-5px);
+}
+.status-btn:active {
+  transform: scale(0.97);
+}
+.completed {
+  background-color: green;
+}
+.in-completed {
+  background-color: red;
 }
 .delete-btn {
   padding: 10px;
@@ -139,7 +168,9 @@ body {
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 .delete-btn:hover {
   background-color: rgb(141, 0, 0);
+  transform: translateY(-5px);
 }
